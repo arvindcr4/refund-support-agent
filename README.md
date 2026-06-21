@@ -1,5 +1,7 @@
 # ShopWell Refund Agent
 
+**Demo video (10 min walkthrough):** https://drive.google.com/file/d/15oSbKMzwFBa8x6vM0MVSx_DNqtxBhbCc/view
+
 An AI customer-support agent that approves, denies, or escalates e-commerce refund requests. A support manager opens a two-pane console, picks a customer/order, and chats with the agent as if they were the shopper. The agent looks up the customer and order in a mock CRM, runs a deterministic policy engine to get a verdict, executes the matching action (issue, deny, or escalate), and replies with the policy rule cited. Every reasoning step (each tool call, tool result, and final answer) streams live into an admin reasoning log for human auditing.
 
 ---
