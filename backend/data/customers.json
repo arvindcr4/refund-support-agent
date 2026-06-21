@@ -1,0 +1,330 @@
+[
+  {
+    "id": "C001",
+    "name": "Maya Chen",
+    "email": "maya.chen@example.com",
+    "tier": "standard",
+    "fraud_flag": false,
+    "lifetime_refunds": 0,
+    "orders": [
+      {
+        "id": "O1001",
+        "item": "Wireless Headphones",
+        "category": "electronics",
+        "amount": 129.99,
+        "status": "delivered",
+        "delivery_date": "2026-06-13",
+        "condition": "new",
+        "final_sale": false,
+        "already_refunded": false
+      }
+    ]
+  },
+  {
+    "id": "C002",
+    "name": "James Okoro",
+    "email": "james.okoro@example.com",
+    "tier": "premium",
+    "fraud_flag": false,
+    "lifetime_refunds": 1,
+    "orders": [
+      {
+        "id": "O1002",
+        "item": "Running Shoes",
+        "category": "apparel",
+        "amount": 89.5,
+        "status": "delivered",
+        "delivery_date": "2026-06-18",
+        "condition": "new",
+        "final_sale": false,
+        "already_refunded": false
+      }
+    ]
+  },
+  {
+    "id": "C003",
+    "name": "Sofia Rossi",
+    "email": "sofia.rossi@example.com",
+    "tier": "standard",
+    "fraud_flag": false,
+    "lifetime_refunds": 0,
+    "orders": [
+      {
+        "id": "O1003",
+        "item": "Coffee Maker",
+        "category": "home",
+        "amount": 64.0,
+        "status": "delivered",
+        "delivery_date": "2026-06-01",
+        "condition": "used",
+        "final_sale": false,
+        "already_refunded": false,
+        "customer_note": "Arrived defective, leaks water"
+      }
+    ]
+  },
+  {
+    "id": "C004",
+    "name": "Liam Walsh",
+    "email": "liam.walsh@example.com",
+    "tier": "standard",
+    "fraud_flag": false,
+    "lifetime_refunds": 0,
+    "orders": [
+      {
+        "id": "O1004",
+        "item": "Desk Lamp",
+        "category": "home",
+        "amount": 45.0,
+        "status": "delivered",
+        "delivery_date": "2026-04-15",
+        "condition": "new",
+        "final_sale": false,
+        "already_refunded": false
+      }
+    ]
+  },
+  {
+    "id": "C005",
+    "name": "Aisha Khan",
+    "email": "aisha.khan@example.com",
+    "tier": "premium",
+    "fraud_flag": false,
+    "lifetime_refunds": 0,
+    "orders": [
+      {
+        "id": "O1005",
+        "item": "Photo Editing License",
+        "category": "digital",
+        "amount": 199.0,
+        "status": "delivered",
+        "delivery_date": "2026-06-16",
+        "condition": "new",
+        "final_sale": true,
+        "already_refunded": false
+      }
+    ]
+  },
+  {
+    "id": "C006",
+    "name": "Noah Schmidt",
+    "email": "noah.schmidt@example.com",
+    "tier": "standard",
+    "fraud_flag": false,
+    "lifetime_refunds": 0,
+    "orders": [
+      {
+        "id": "O1006",
+        "item": "$50 Gift Card",
+        "category": "gift_card",
+        "amount": 50.0,
+        "status": "delivered",
+        "delivery_date": "2026-06-19",
+        "condition": "new",
+        "final_sale": true,
+        "already_refunded": false
+      }
+    ]
+  },
+  {
+    "id": "C007",
+    "name": "Emma Dubois",
+    "email": "emma.dubois@example.com",
+    "tier": "standard",
+    "fraud_flag": false,
+    "lifetime_refunds": 0,
+    "orders": [
+      {
+        "id": "O1007",
+        "item": "Ceramic Vase",
+        "category": "home",
+        "amount": 38.0,
+        "status": "delivered",
+        "delivery_date": "2026-06-15",
+        "condition": "damaged_by_customer",
+        "final_sale": false,
+        "already_refunded": false,
+        "customer_note": "I dropped it but want a refund"
+      }
+    ]
+  },
+  {
+    "id": "C008",
+    "name": "Daniel Park",
+    "email": "daniel.park@example.com",
+    "tier": "premium",
+    "fraud_flag": false,
+    "lifetime_refunds": 1,
+    "orders": [
+      {
+        "id": "O1008",
+        "item": "OLED Television",
+        "category": "electronics",
+        "amount": 1299.0,
+        "status": "delivered",
+        "delivery_date": "2026-06-11",
+        "condition": "new",
+        "final_sale": false,
+        "already_refunded": false
+      }
+    ]
+  },
+  {
+    "id": "C009",
+    "name": "Olivia Brown",
+    "email": "olivia.brown@example.com",
+    "tier": "standard",
+    "fraud_flag": true,
+    "lifetime_refunds": 4,
+    "orders": [
+      {
+        "id": "O1009",
+        "item": "Smartwatch",
+        "category": "electronics",
+        "amount": 220.0,
+        "status": "delivered",
+        "delivery_date": "2026-06-17",
+        "condition": "new",
+        "final_sale": false,
+        "already_refunded": false
+      }
+    ]
+  },
+  {
+    "id": "C010",
+    "name": "Lucas Meyer",
+    "email": "lucas.meyer@example.com",
+    "tier": "standard",
+    "fraud_flag": false,
+    "lifetime_refunds": 1,
+    "orders": [
+      {
+        "id": "O1010",
+        "item": "Bluetooth Speaker",
+        "category": "electronics",
+        "amount": 75.0,
+        "status": "delivered",
+        "delivery_date": "2026-06-12",
+        "condition": "new",
+        "final_sale": false,
+        "already_refunded": true
+      }
+    ]
+  },
+  {
+    "id": "C011",
+    "name": "Grace Lee",
+    "email": "grace.lee@example.com",
+    "tier": "premium",
+    "fraud_flag": false,
+    "lifetime_refunds": 0,
+    "orders": [
+      {
+        "id": "O1011",
+        "item": "Standing Desk",
+        "category": "furniture",
+        "amount": 310.0,
+        "status": "in_transit",
+        "delivery_date": null,
+        "condition": "new",
+        "final_sale": false,
+        "already_refunded": false
+      }
+    ]
+  },
+  {
+    "id": "C012",
+    "name": "Hiro Tanaka",
+    "email": "hiro.tanaka@example.com",
+    "tier": "vip",
+    "fraud_flag": false,
+    "lifetime_refunds": 1,
+    "orders": [
+      {
+        "id": "O1012",
+        "item": "Mechanical Keyboard",
+        "category": "electronics",
+        "amount": 142.0,
+        "status": "delivered",
+        "delivery_date": "2026-05-14",
+        "condition": "new",
+        "final_sale": false,
+        "already_refunded": false
+      }
+    ]
+  },
+  {
+    "id": "C013",
+    "name": "Fatima Ali",
+    "email": "fatima.ali@example.com",
+    "tier": "standard",
+    "fraud_flag": false,
+    "lifetime_refunds": 5,
+    "orders": [
+      {
+        "id": "O1013",
+        "item": "Yoga Mat",
+        "category": "fitness",
+        "amount": 29.99,
+        "status": "delivered",
+        "delivery_date": "2026-06-14",
+        "condition": "new",
+        "final_sale": false,
+        "already_refunded": false
+      }
+    ]
+  },
+  {
+    "id": "C014",
+    "name": "Ben Carter",
+    "email": "ben.carter@example.com",
+    "tier": "standard",
+    "fraud_flag": false,
+    "lifetime_refunds": 0,
+    "orders": [
+      {
+        "id": "O1014",
+        "item": "Gourmet Cheese Box",
+        "category": "perishable",
+        "amount": 54.0,
+        "status": "delivered",
+        "delivery_date": "2026-06-19",
+        "condition": "new",
+        "final_sale": false,
+        "already_refunded": false
+      }
+    ]
+  },
+  {
+    "id": "C015",
+    "name": "Zara Ahmed",
+    "email": "zara.ahmed@example.com",
+    "tier": "premium",
+    "fraud_flag": false,
+    "lifetime_refunds": 0,
+    "orders": [
+      {
+        "id": "O1015",
+        "item": "Backpack",
+        "category": "apparel",
+        "amount": 79.0,
+        "status": "delivered",
+        "delivery_date": "2026-06-09",
+        "condition": "new",
+        "final_sale": false,
+        "already_refunded": false
+      },
+      {
+        "id": "O1016",
+        "item": "Water Bottle",
+        "category": "fitness",
+        "amount": 24.0,
+        "status": "delivered",
+        "delivery_date": "2026-05-12",
+        "condition": "new",
+        "final_sale": false,
+        "already_refunded": false
+      }
+    ]
+  }
+]
