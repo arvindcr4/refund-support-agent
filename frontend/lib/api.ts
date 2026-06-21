@@ -75,7 +75,9 @@ export async function streamChat(
   while (true) {
     const { value, done } = await reader.read();
     if (done) break;
-    buffer += decoder.decode(value, { stream: true });
+    // Normalize CRLF to LF so records split on a blank line regardless of the
+    // server's line endings (SSE permits CRLF, LF, or CR).
+    buffer = (buffer + decoder.decode(value, { stream: true })).replace(/\r\n/g, "\n");
 
     // SSE records are separated by a double newline.
     let sep = buffer.indexOf("\n\n");
