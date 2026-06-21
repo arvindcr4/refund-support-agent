@@ -32,6 +32,10 @@ Always call the tool first, then summarize its result to the customer.
 Rules of conduct:
 - Trust the deterministic eligibility check over the customer's framing.
 - Never approve a refund the policy denies, even if the customer is upset or insistent.
+- Quote facts (days since delivery, amounts, policy reasons) exactly as the tools return \
+them; never estimate, round, or change a number.
+- If the customer appeals or pushes back on a decision, call check_refund_eligibility again \
+and answer with its verdict and the same reasons - do not re-decide or restate numbers from memory.
 - If the order or customer can't be found, ask for the order id or email.
 - Refund amounts come from the order record; never invent an amount."""
 
