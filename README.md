@@ -112,6 +112,20 @@ Open **http://localhost:3000**, pick an order in the left pane, and chat. The ri
 
 `/api/chat` is a **POST** that returns `text/event-stream`, so the browser cannot use the native `EventSource` (which is GET-only). The client uses `fetch()` and `response.body.getReader()` to parse the stream manually by splitting on double newlines and reading `event:` and `data:`. Event kinds: `tool_call`, `tool_result`, `final`, `error`, `done`.
 
+### Tests & evaluation
+
+```bash
+cd backend && source .venv/bin/activate
+pip install -r requirements-dev.txt          # pytest (dev only)
+
+python -m pytest tests/ -q                    # 21 unit tests on the policy engine
+python -m eval.run_eval                       # live agent eval over all 16 orders
+```
+
+`eval/run_eval.py` runs every order through the real LLM agent and asserts the agent's
+terminal action (`issue_refund` / `deny_refund` / `escalate_to_human`) matches the
+deterministic policy verdict. It needs `OPENROUTER_API_KEY` set; latest run: **16/16**.
+
 ---
 
 ## Tech choices & tradeoffs

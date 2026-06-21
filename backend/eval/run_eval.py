@@ -3,11 +3,14 @@ from __future__ import annotations
 
 import asyncio
 import os
+import sys
 from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv(Path(__file__).resolve().parent.parent / ".env")
+_BACKEND = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(_BACKEND))
+load_dotenv(_BACKEND / ".env")
 
 from app import data  # noqa: E402
 from app.agent import run_agent  # noqa: E402

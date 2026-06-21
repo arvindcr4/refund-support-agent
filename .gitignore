@@ -11,3 +11,8 @@ frontend/out/
 
 # macOS
 .DS_Store
+
+# local tooling / test artifacts
+*.sqlite3
+.playwright-mcp/
+.pytest_cache/
