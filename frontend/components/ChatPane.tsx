@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { streamChat } from "@/lib/api";
 import type { ChatTurn, StreamEvent } from "@/lib/types";
+import { useVoice } from "@/lib/useVoice";
 import ScenarioPicker from "./ScenarioPicker";
 import { SectionTitle } from "./ui";
 
@@ -31,6 +32,7 @@ export default function ChatPane({
   const [streaming, setStreaming] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const voice = useVoice();
 
   // Chat history excluding initial greeting.
   const historyRef = useRef<ChatTurn[]>([]);
@@ -64,6 +66,7 @@ export default function ChatPane({
         onStreamEvent?.(event);
         if (event.kind === "final") {
           finalContent = event.content;
+          voice.speak(event.content);
           setMessages((m) => {
             const copy = [...m];
             copy[copy.length - 1] = {
@@ -108,9 +111,29 @@ export default function ChatPane({
     <div className="flex h-full flex-col">
       <SectionTitle
         right={
-          <span className="text-[11px] text-slate-500">
-            {streaming ? "agent thinking..." : "ready"}
-          </span>
+          <div className="flex items-center gap-2">
+            {voice.ttsSupported && (
+              <button
+                type="button"
+                onClick={() => voice.setSpeakEnabled(!voice.speakEnabled)}
+                title="Toggle spoken replies"
+                className={`rounded px-2 py-0.5 text-[11px] font-medium transition ${
+                  voice.speakEnabled
+                    ? "bg-sky-600/20 text-sky-300"
+                    : "bg-slate-800 text-slate-500"
+                }`}
+              >
+                Voice {voice.speakEnabled ? "on" : "off"}
+              </button>
+            )}
+            <span className="text-[11px] text-slate-500">
+              {streaming
+                ? "agent thinking..."
+                : voice.listening
+                  ? "listening..."
+                  : "ready"}
+            </span>
+          </div>
         }
       >
         Customer Chat
@@ -163,6 +186,30 @@ export default function ChatPane({
           }}
           className="flex items-center gap-2"
         >
+          <button
+            type="button"
+            onClick={() =>
+              voice.listening
+                ? voice.stopListening()
+                : voice.startListening((t) => {
+                    setInput(t);
+                    send(t);
+                  })
+            }
+            disabled={streaming || !voice.sttSupported}
+            title={
+              voice.sttSupported
+                ? "Speak your request"
+                : "Voice input needs Chrome or Safari"
+            }
+            className={`shrink-0 rounded-lg border px-3 py-2 transition disabled:opacity-40 ${
+              voice.listening
+                ? "animate-pulse border-red-500 bg-red-500/20 text-red-300"
+                : "border-slate-700 bg-slate-900 text-slate-300 hover:border-sky-500"
+            }`}
+          >
+            <MicIcon />
+          </button>
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -189,5 +236,14 @@ function Dot({ delay = "0ms" }: { delay?: string }) {
       className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-slate-400"
       style={{ animationDelay: delay }}
     />
+  );
+}
+
+function MicIcon() {
+  return (
+    <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4" aria-hidden="true">
+      <path d="M10 2a2 2 0 0 0-2 2v6a2 2 0 1 0 4 0V4a2 2 0 0 0-2-2Z" />
+      <path d="M5 10a1 1 0 1 0-2 0 7 7 0 0 0 6 6.93V19a1 1 0 1 0 2 0v-2.07A7 7 0 0 0 17 10a1 1 0 1 0-2 0 5 5 0 0 1-10 0Z" />
+    </svg>
   );
 }

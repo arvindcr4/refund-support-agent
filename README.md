@@ -177,9 +177,25 @@ All verdicts are produced by `evaluate_order` and are reproducible (`TODAY = 202
 
 ---
 
-## Bonus / next steps
+## Bonus: voice
 
-- **Voice pipeline**: Wrap the `/api/chat` stream with speech-to-text and text-to-speech to allow verbal interaction.
+The customer chat has an optional voice mode built on the browser's Web Speech API,
+so the agent supports a fully spoken interaction with no extra services or keys:
+
+- **Speech to text**: the mic button captures a spoken request (`SpeechRecognition`),
+  transcribes it, and sends it through the same `/api/chat` stream as typed input.
+- **Text to speech**: when "Voice on" is enabled, the agent's final reply is read aloud
+  (`SpeechSynthesis`). The toggle and mic feature-detect and hide where unsupported
+  (works in Chrome and Safari).
+
+Because input and output both flow through the existing streaming endpoint, swapping in a
+hosted pipeline (OpenAI Realtime, ElevenLabs, or LiveKit) is a client-side change to
+`frontend/lib/useVoice.ts` only - the backend agent is unchanged.
+
+---
+
+## Next steps
+
 - **Persistence** for the CRM/action log (SQLite/Postgres) so decisions survive restarts.
 - **Per-decision audit export** (JSON of every tool_call/result) for compliance review.
 - **Policy-as-data**: lift §1-§7 thresholds into a config so non-engineers can tune the

@@ -132,11 +132,20 @@ Click **Reset**:
 
 ---
 
-## 8:45-9:30 - Wrap and next steps (~45s)
+## 8:00-8:45 - Bonus: voice (~45s)
 
-> "To recap: an LLM agent for the conversation, a deterministic policy engine for the decision, seven tools split into reads and terminal actions, and a live reasoning log."
+> "As a bonus, the chat also works by voice."
 
-> "The planned stretch is a voice pipeline - STT in, TTS out - wrapped around the same streaming chat endpoint. Thanks for watching."
+- Click the **mic** button, speak a request out loud (e.g. "I want a refund for order O1004"), and let the transcript send itself.
+- With **Voice on**, the agent's reply is read back aloud - a fully spoken refund interaction.
+
+> "Speech-to-text in, the same agent and policy engine in the middle, text-to-speech out - all over the existing streaming endpoint, so the backend never changed."
+
+---
+
+## 8:45-9:30 - Wrap (~45s)
+
+> "To recap: an LLM agent for the conversation, a deterministic policy engine for the decision, seven tools split into reads and terminal actions, a live reasoning log, and an optional voice mode. Thanks for watching."
 
 ---
 
